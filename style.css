@@ -1,16 +1,11 @@
 body {
-  background-color: papayawhip;
-}
-
-#imagenResultado {
-  max-width: 220%; /* Cambia el tamaño máximo de la imagen al 80% del contenedor */
-  max-height: 220%; /* Cambia el tamaño máximo de la imagen al 80% del contenedor */
-  width: auto; /* Permite que la imagen se ajuste automáticamente al tamaño máximo */
-  height: auto; /* Permite que la imagen se ajuste automáticamente al tamaño máximo */
-}
-
-.ruleta2 {
-  text-align: center;
+  margin: 0; /* Elimina el margen predeterminado del cuerpo */
+  padding: 0; /* Elimina el relleno predeterminado del cuerpo */
+  height: 100vh; /* Establece la altura del cuerpo al 100% del alto de la ventana */
+  background-image: url("img-s/69-puro.gif"); /* Ruta de la imagen de fondo */
+  background-size: cover; /* Hace que la imagen de fondo cubra todo el cuerpo */
+  background-position: center; /* Centra la imagen de fondo */
+  position: relative; /* Establece el contexto de apilamiento para el contenido de la ruleta */
 }
 
 .container {
@@ -20,16 +15,39 @@ body {
   align-items: center;
   height: 80vh; /* Ajusta la altura del contenedor al 80% del alto de la pantalla */
 }
-
 .ruleta {
   position: relative;
   width: 400px; /* Ajustamos el tamaño de la ruleta */
   height: 400px; /* Ajustamos el tamaño de la ruleta */
-  border: 2px solid black;
+  border: 8px solid black; /* Borde inicial negro */
   border-radius: 50%;
   overflow: hidden;
   cursor: pointer;
-  border: 5px solid gold;
+  animation: changeBorderColor 3s infinite alternate; /* Animación para cambiar el color del borde */
+}
+
+@keyframes changeBorderColor {
+  0%,
+  100% {
+    border-color: black; /* Color del borde al inicio y al final */
+  }
+  50% {
+    border-color: red; /* Color del borde a la mitad de la animación */
+  }
+}
+
+#imagenResultado {
+  max-width: 400%; /* Cambia el tamaño máximo de la imagen al 80% del contenedor */
+  max-height: 290%; /* Cambia el tamaño máximo de la imagen al 80% del contenedor */
+  width: auto; /* Permite que la imagen se ajuste automáticamente al tamaño máximo */
+  height: auto; /* Permite que la imagen se ajuste automáticamente al tamaño máximo */
+}
+
+.ruleta2 {
+  text-align: center;
+  font-family: "Times New Roman", Times, serif;
+  color: red;
+  background-color: black;
 }
 
 .opcion {
@@ -59,11 +77,20 @@ body {
   transform: translate(-50%, -50%);
   display: none;
   cursor: pointer;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
 }
 
+/* Tamaño de la imagen del resultado */
 #imagenResultado {
-  max-width: 80%; /* Cambia el tamaño de la imagen */
-  max-height: 80%; /* Cambia el tamaño de la imagen */
+  max-width: 140%; /* Establece el ancho máximo de la imagen al 100% del contenedor */
+  max-height: 120%; /* Establece la altura máxima de la imagen al 100% del contenedor */
+  width: auto; /* Permite que la imagen se ajuste automáticamente al tamaño máximo */
+  height: auto; /* Permite que la imagen se ajuste automáticamente al tamaño máximo */
+  display: block; /* Para centrar horizontalmente la imagen */
+  margin: 0 auto; /* Para centrar horizontalmente la imagen */
 }
 
 .flecha {
@@ -74,6 +101,7 @@ body {
   height: 0;
   border-left: 10px solid transparent;
   border-right: 10px solid transparent;
-  border-top: 15px solid black;
+  border-top: 15px solid red;
   transform: translate(-50%, -50%);
+  color: green;
 }
