@@ -1,0 +1,79 @@
+body {
+  background-color: papayawhip;
+}
+
+#imagenResultado {
+  max-width: 220%; /* Cambia el tamaño máximo de la imagen al 80% del contenedor */
+  max-height: 220%; /* Cambia el tamaño máximo de la imagen al 80% del contenedor */
+  width: auto; /* Permite que la imagen se ajuste automáticamente al tamaño máximo */
+  height: auto; /* Permite que la imagen se ajuste automáticamente al tamaño máximo */
+}
+
+.ruleta2 {
+  text-align: center;
+}
+
+.container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vh; /* Ajusta la altura del contenedor al 80% del alto de la pantalla */
+}
+
+.ruleta {
+  position: relative;
+  width: 400px; /* Ajustamos el tamaño de la ruleta */
+  height: 400px; /* Ajustamos el tamaño de la ruleta */
+  border: 2px solid black;
+  border-radius: 50%;
+  overflow: hidden;
+  cursor: pointer;
+  border: 5px solid gold;
+}
+
+.opcion {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform-origin: 50% 150%; /* Cambiamos el punto de origen de la transformación */
+  font-size: 16px;
+  font-weight: bold;
+  white-space: nowrap; /* Evita que el texto se divida en múltiples líneas */
+}
+
+.opcion:nth-child(odd) {
+  transform: translate(-50%, -50%) rotate(calc(var(--angle) * var(--index)))
+    translateY(160px); /* Ajustamos la distancia del tema a la ruleta */
+}
+
+.opcion:nth-child(even) {
+  transform: translate(-50%, -50%) rotate(calc(var(--angle) * var(--index)))
+    translateY(200px); /* Ajustamos la distancia del tema a la ruleta */
+}
+
+.resultado {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: none;
+  cursor: pointer;
+}
+
+#imagenResultado {
+  max-width: 80%; /* Cambia el tamaño de la imagen */
+  max-height: 80%; /* Cambia el tamaño de la imagen */
+}
+
+.flecha {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 15px solid black;
+  transform: translate(-50%, -50%);
+}
