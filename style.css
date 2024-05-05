@@ -8,6 +8,12 @@ body {
   position: relative; /* Establece el contexto de apilamiento para el contenido de la ruleta */
 }
 
+.pose {
+  text-align: center;
+  color: white;
+  background-color: black;
+}
+
 .container {
   position: relative;
   display: flex;
