@@ -156,17 +156,6 @@ const temas = [
 ];
 
 // Función para inicializar la ruleta con las opciones
-function inicializarRuleta() {
-  temas.forEach((tema, index) => {
-    const opcion = document.createElement("div");
-    opcion.classList.add("opcion");
-    opcion.textContent = tema.nombre;
-    const angle = (360 / temas.length) * index;
-    opcion.style.setProperty("--angle", `${angle}deg`);
-    opcion.style.setProperty("--index", index + 1); // índice basado en 1
-    ruleta.appendChild(opcion);
-  });
-}
 
 // Llamamos a la función de inicialización cuando carga la página
 document.addEventListener("DOMContentLoaded", inicializarRuleta);
@@ -191,3 +180,21 @@ function mostrarResultado() {
   const nombrePose = document.querySelector(".pose");
   nombrePose.textContent = opcionElegida.nombre;
 }
+
+// Función para cerrar el resultado
+// Función para cerrar el resultado
+function cerrarResultado() {
+  resultado.style.display = "none";
+}
+
+// Agregar un event listener al cuerpo del documento para detectar clics fuera del área de la imagen resultado
+document.body.addEventListener("click", function (event) {
+  // Verificar si el clic ocurrió fuera del área de la imagen resultado y si la imagen resultado está visible
+  if (
+    !resultado.contains(event.target) &&
+    resultado.style.display === "block"
+  ) {
+    // Si el clic ocurrió fuera del área de la imagen resultado y la imagen está visible, cerrar la imagen resultado
+    cerrarResultado();
+  }
+});
