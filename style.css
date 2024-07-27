@@ -23,13 +23,14 @@ body {
 }
 .ruleta {
   position: relative;
-  width: 400px; /* Ajustamos el tamaño de la ruleta */
-  height: 400px; /* Ajustamos el tamaño de la ruleta */
-  border: 8px solid black; /* Borde inicial negro */
-  border-radius: 50%;
+  width: 400px;
+  /*Ajustamoseltamañodelaruleta*/height: 400px;
+  /*Ajustamoseltamañodelaruleta*/border: 8px solid black;
+  /*Bordeinicialnegro*/border-radius: 50%;
   overflow: hidden;
   cursor: pointer;
-  animation: changeBorderColor 3s infinite alternate; /* Animación para cambiar el color del borde */
+  animation: changeBorderColor 3s infinite alternate;
+  -webkit-animation: changeBorderColor 3s infinite alternate;
 }
 
 @keyframes changeBorderColor {
